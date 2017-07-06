@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:tns="http://ServicioWeb/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" name="ServicioWeb" targetNamespace="http://ServicioWeb/" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/WS_proyecto/ServicioWeb?xsd=1" namespace="http://ServicioWeb/" />
+    </xsd:schema>
+  </types>
+  <message name="mostrar_agencias">
+    <part name="parameters" element="tns:mostrar_agencias" />
+  </message>
+  <message name="mostrar_agenciasResponse">
+    <part name="parameters" element="tns:mostrar_agenciasResponse" />
+  </message>
+  <message name="agregar_agencias">
+    <part name="parameters" element="tns:agregar_agencias" />
+  </message>
+  <message name="agregar_agenciasResponse">
+    <part name="parameters" element="tns:agregar_agenciasResponse" />
+  </message>
+  <message name="retornar_idcliente">
+    <part name="parameters" element="tns:retornar_idcliente" />
+  </message>
+  <message name="retornar_idclienteResponse">
+    <part name="parameters" element="tns:retornar_idclienteResponse" />
+  </message>
+  <message name="retornar_id_trabajador">
+    <part name="parameters" element="tns:retornar_id_trabajador" />
+  </message>
+  <message name="retornar_id_trabajadorResponse">
+    <part name="parameters" element="tns:retornar_id_trabajadorResponse" />
+  </message>
+  <message name="ingresar_clientes">
+    <part name="parameters" element="tns:ingresar_clientes" />
+  </message>
+  <message name="ingresar_clientesResponse">
+    <part name="parameters" element="tns:ingresar_clientesResponse" />
+  </message>
+  <message name="login">
+    <part name="parameters" element="tns:login" />
+  </message>
+  <message name="loginResponse">
+    <part name="parameters" element="tns:loginResponse" />
+  </message>
+  <message name="mostrar_tipo_trabajador">
+    <part name="parameters" element="tns:mostrar_tipo_trabajador" />
+  </message>
+  <message name="mostrar_tipo_trabajadorResponse">
+    <part name="parameters" element="tns:mostrar_tipo_trabajadorResponse" />
+  </message>
+  <message name="quitar_gerente_agencia">
+    <part name="parameters" element="tns:quitar_gerente_agencia" />
+  </message>
+  <message name="quitar_gerente_agenciaResponse">
+    <part name="parameters" element="tns:quitar_gerente_agenciaResponse" />
+  </message>
+  <message name="cambiar_trabajo">
+    <part name="parameters" element="tns:cambiar_trabajo" />
+  </message>
+  <message name="cambiar_trabajoResponse">
+    <part name="parameters" element="tns:cambiar_trabajoResponse" />
+  </message>
+  <message name="login_trabajador">
+    <part name="parameters" element="tns:login_trabajador" />
+  </message>
+  <message name="login_trabajadorResponse">
+    <part name="parameters" element="tns:login_trabajadorResponse" />
+  </message>
+  <message name="retornal_saldo">
+    <part name="parameters" element="tns:retornal_saldo" />
+  </message>
+  <message name="retornal_saldoResponse">
+    <part name="parameters" element="tns:retornal_saldoResponse" />
+  </message>
+  <message name="agregar_trabajador">
+    <part name="parameters" element="tns:agregar_trabajador" />
+  </message>
+  <message name="agregar_trabajadorResponse">
+    <part name="parameters" element="tns:agregar_trabajadorResponse" />
+  </message>
+  <message name="solicitar_prestamo">
+    <part name="parameters" element="tns:solicitar_prestamo" />
+  </message>
+  <message name="solicitar_prestamoResponse">
+    <part name="parameters" element="tns:solicitar_prestamoResponse" />
+  </message>
+  <message name="hello">
+    <part name="parameters" element="tns:hello" />
+  </message>
+  <message name="helloResponse">
+    <part name="parameters" element="tns:helloResponse" />
+  </message>
+  <message name="insertar_cuenta">
+    <part name="parameters" element="tns:insertar_cuenta" />
+  </message>
+  <message name="insertar_cuentaResponse">
+    <part name="parameters" element="tns:insertar_cuentaResponse" />
+  </message>
+  <message name="depositar">
+    <part name="parameters" element="tns:depositar" />
+  </message>
+  <message name="depositarResponse">
+    <part name="parameters" element="tns:depositarResponse" />
+  </message>
+  <message name="modalidad_pago">
+    <part name="parameters" element="tns:modalidad_pago" />
+  </message>
+  <message name="modalidad_pagoResponse">
+    <part name="parameters" element="tns:modalidad_pagoResponse" />
+  </message>
+  <message name="mostrar_cuentas">
+    <part name="parameters" element="tns:mostrar_cuentas" />
+  </message>
+  <message name="mostrar_cuentasResponse">
+    <part name="parameters" element="tns:mostrar_cuentasResponse" />
+  </message>
+  <message name="estado_cuenta">
+    <part name="parameters" element="tns:estado_cuenta" />
+  </message>
+  <message name="estado_cuentaResponse">
+    <part name="parameters" element="tns:estado_cuentaResponse" />
+  </message>
+  <message name="retiro_monetario">
+    <part name="parameters" element="tns:retiro_monetario" />
+  </message>
+  <message name="retiro_monetarioResponse">
+    <part name="parameters" element="tns:retiro_monetarioResponse" />
+  </message>
+  <portType name="ServicioWeb">
+    <operation name="mostrar_agencias">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/mostrar_agenciasRequest" message="tns:mostrar_agencias" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/mostrar_agenciasResponse" message="tns:mostrar_agenciasResponse" />
+    </operation>
+    <operation name="agregar_agencias">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/agregar_agenciasRequest" message="tns:agregar_agencias" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/agregar_agenciasResponse" message="tns:agregar_agenciasResponse" />
+    </operation>
+    <operation name="retornar_idcliente">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/retornar_idclienteRequest" message="tns:retornar_idcliente" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/retornar_idclienteResponse" message="tns:retornar_idclienteResponse" />
+    </operation>
+    <operation name="retornar_id_trabajador">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/retornar_id_trabajadorRequest" message="tns:retornar_id_trabajador" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/retornar_id_trabajadorResponse" message="tns:retornar_id_trabajadorResponse" />
+    </operation>
+    <operation name="ingresar_clientes">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/ingresar_clientesRequest" message="tns:ingresar_clientes" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/ingresar_clientesResponse" message="tns:ingresar_clientesResponse" />
+    </operation>
+    <operation name="login">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/loginRequest" message="tns:login" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/loginResponse" message="tns:loginResponse" />
+    </operation>
+    <operation name="mostrar_tipo_trabajador">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/mostrar_tipo_trabajadorRequest" message="tns:mostrar_tipo_trabajador" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/mostrar_tipo_trabajadorResponse" message="tns:mostrar_tipo_trabajadorResponse" />
+    </operation>
+    <operation name="quitar_gerente_agencia">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/quitar_gerente_agenciaRequest" message="tns:quitar_gerente_agencia" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/quitar_gerente_agenciaResponse" message="tns:quitar_gerente_agenciaResponse" />
+    </operation>
+    <operation name="cambiar_trabajo">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/cambiar_trabajoRequest" message="tns:cambiar_trabajo" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/cambiar_trabajoResponse" message="tns:cambiar_trabajoResponse" />
+    </operation>
+    <operation name="login_trabajador">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/login_trabajadorRequest" message="tns:login_trabajador" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/login_trabajadorResponse" message="tns:login_trabajadorResponse" />
+    </operation>
+    <operation name="retornal_saldo">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/retornal_saldoRequest" message="tns:retornal_saldo" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/retornal_saldoResponse" message="tns:retornal_saldoResponse" />
+    </operation>
+    <operation name="agregar_trabajador">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/agregar_trabajadorRequest" message="tns:agregar_trabajador" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/agregar_trabajadorResponse" message="tns:agregar_trabajadorResponse" />
+    </operation>
+    <operation name="solicitar_prestamo">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/solicitar_prestamoRequest" message="tns:solicitar_prestamo" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/solicitar_prestamoResponse" message="tns:solicitar_prestamoResponse" />
+    </operation>
+    <operation name="hello">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/helloRequest" message="tns:hello" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/helloResponse" message="tns:helloResponse" />
+    </operation>
+    <operation name="insertar_cuenta">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/insertar_cuentaRequest" message="tns:insertar_cuenta" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/insertar_cuentaResponse" message="tns:insertar_cuentaResponse" />
+    </operation>
+    <operation name="depositar">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/depositarRequest" message="tns:depositar" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/depositarResponse" message="tns:depositarResponse" />
+    </operation>
+    <operation name="modalidad_pago">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/modalidad_pagoRequest" message="tns:modalidad_pago" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/modalidad_pagoResponse" message="tns:modalidad_pagoResponse" />
+    </operation>
+    <operation name="mostrar_cuentas">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/mostrar_cuentasRequest" message="tns:mostrar_cuentas" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/mostrar_cuentasResponse" message="tns:mostrar_cuentasResponse" />
+    </operation>
+    <operation name="estado_cuenta">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/estado_cuentaRequest" message="tns:estado_cuenta" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/estado_cuentaResponse" message="tns:estado_cuentaResponse" />
+    </operation>
+    <operation name="retiro_monetario">
+      <input wsam:Action="http://ServicioWeb/ServicioWeb/retiro_monetarioRequest" message="tns:retiro_monetario" />
+      <output wsam:Action="http://ServicioWeb/ServicioWeb/retiro_monetarioResponse" message="tns:retiro_monetarioResponse" />
+    </operation>
+  </portType>
+  <binding name="ServicioWebPortBinding" type="tns:ServicioWeb">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="mostrar_agencias">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregar_agencias">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="retornar_idcliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="retornar_id_trabajador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ingresar_clientes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="login">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="mostrar_tipo_trabajador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="quitar_gerente_agencia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="cambiar_trabajo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="login_trabajador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="retornal_saldo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="agregar_trabajador">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="solicitar_prestamo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="hello">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertar_cuenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="depositar">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="modalidad_pago">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="mostrar_cuentas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="estado_cuenta">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="retiro_monetario">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="ServicioWeb">
+    <port name="ServicioWebPort" binding="tns:ServicioWebPortBinding">
+      <soap:address location="http://localhost:8080/WS_proyecto/ServicioWeb" />
+    </port>
+  </service>
+</definitions>
